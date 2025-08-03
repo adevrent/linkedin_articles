@@ -7533,7 +7533,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [114]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [146]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
@@ -7596,7 +7596,7 @@ Price Data shape: (629, 30)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[114]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[146]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7695,7 +7695,7 @@ Price Data shape: (629, 30)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [115]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [147]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -7736,7 +7736,7 @@ Price Data shape: (629, 30)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[115]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[147]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7836,7 +7836,7 @@ Price Data shape: (629, 30)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [116]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [148]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">mu_array_with_r</span> <span class="o">=</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">"ME"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -7885,7 +7885,7 @@ Date
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [117]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [149]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># group by each year+month, then compute .cov() on the returns in that bucket</span>
@@ -7894,11 +7894,7 @@ Date
     <span class="k">for</span> <span class="n">period</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Grouper</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="s2">"ME"</span><span class="p">))</span>  <span class="c1"># omit the risk-free rate from covariance calculations</span>
 <span class="p">}</span>
 <span class="n">last_date</span> <span class="o">=</span> <span class="n">mu_array_with_r</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Last date:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">last_date</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Covariance matrix shape:"</span><span class="p">,</span> <span class="n">cov_array</span><span class="p">[</span><span class="n">last_date</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cov_array</span><span class="p">[</span><span class="n">last_date</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># 30x30 covariance matrix for the last date</span>
 </pre></div>
 </div>
 </div>
@@ -7911,139 +7907,7 @@ Date
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Last date:
-2025-07-31 00:00:00
-
-Covariance matrix shape: (30, 30)
-          AEFES.IS  AKBNK.IS  ASELS.IS  ASTOR.IS  BIMAS.IS  CIMSA.IS  \
-AEFES.IS    0.0006    0.0003    0.0001    0.0003    0.0001    0.0002   
-AKBNK.IS    0.0003    0.0003   -0.0000    0.0002    0.0001    0.0002   
-ASELS.IS    0.0001   -0.0000    0.0004    0.0001   -0.0001    0.0000   
-ASTOR.IS    0.0003    0.0002    0.0001    0.0004    0.0002    0.0001   
-BIMAS.IS    0.0001    0.0001   -0.0001    0.0002    0.0002    0.0001   
-CIMSA.IS    0.0002    0.0002    0.0000    0.0001    0.0001    0.0003   
-EKGYO.IS    0.0002    0.0002    0.0001    0.0001    0.0001    0.0001   
-ENKAI.IS    0.0003    0.0001    0.0002    0.0002    0.0001    0.0001   
-EREGL.IS    0.0001    0.0002    0.0000    0.0001    0.0001    0.0001   
-FROTO.IS    0.0001    0.0001   -0.0001    0.0001    0.0001    0.0001   
-GARAN.IS    0.0003    0.0003   -0.0000    0.0002    0.0001    0.0002   
-GUBRF.IS    0.0003    0.0002    0.0001    0.0002    0.0002    0.0002   
-ISCTR.IS    0.0003    0.0004   -0.0000    0.0002    0.0002    0.0003   
-KCHOL.IS    0.0003    0.0003   -0.0000    0.0003    0.0002    0.0002   
-KOZAL.IS    0.0002    0.0002    0.0002    0.0001    0.0000    0.0002   
-KRDMD.IS    0.0004    0.0003   -0.0000    0.0002    0.0003    0.0003   
-MGROS.IS    0.0002    0.0002    0.0000    0.0002    0.0002    0.0002   
-PETKM.IS    0.0003    0.0002    0.0001    0.0002    0.0001    0.0002   
-PGSUS.IS    0.0002    0.0002    0.0000    0.0001    0.0001    0.0002   
-SAHOL.IS    0.0002    0.0002    0.0000    0.0002    0.0001    0.0001   
-SASA.IS     0.0004    0.0002    0.0001    0.0002    0.0001    0.0002   
-SISE.IS     0.0003    0.0002    0.0001    0.0002    0.0001    0.0002   
-TAVHL.IS    0.0001    0.0001   -0.0001   -0.0000    0.0000    0.0001   
-TCELL.IS    0.0002    0.0001    0.0000    0.0001    0.0001    0.0001   
-THYAO.IS    0.0002    0.0002    0.0000    0.0002    0.0001    0.0001   
-TOASO.IS    0.0003    0.0002    0.0000    0.0002    0.0001    0.0002   
-TTKOM.IS    0.0002    0.0002    0.0000    0.0002    0.0002    0.0002   
-TUPRS.IS    0.0003    0.0002    0.0001    0.0002    0.0002    0.0002   
-ULKER.IS    0.0003    0.0003   -0.0000    0.0002    0.0002    0.0001   
-YKBNK.IS    0.0003    0.0003   -0.0001    0.0002    0.0001    0.0002   
-
-          EKGYO.IS  ENKAI.IS  EREGL.IS  FROTO.IS  ...  SASA.IS  SISE.IS  \
-AEFES.IS    0.0002    0.0003    0.0001    0.0001  ...   0.0004   0.0003   
-AKBNK.IS    0.0002    0.0001    0.0002    0.0001  ...   0.0002   0.0002   
-ASELS.IS    0.0001    0.0002    0.0000   -0.0001  ...   0.0001   0.0001   
-ASTOR.IS    0.0001    0.0002    0.0001    0.0001  ...   0.0002   0.0002   
-BIMAS.IS    0.0001    0.0001    0.0001    0.0001  ...   0.0001   0.0001   
-CIMSA.IS    0.0001    0.0001    0.0001    0.0001  ...   0.0002   0.0002   
-EKGYO.IS    0.0004    0.0000    0.0001    0.0000  ...   0.0002   0.0001   
-ENKAI.IS    0.0000    0.0004    0.0000    0.0000  ...   0.0002   0.0002   
-EREGL.IS    0.0001    0.0000    0.0001    0.0001  ...   0.0001   0.0001   
-FROTO.IS    0.0000    0.0000    0.0001    0.0003  ...   0.0001   0.0001   
-GARAN.IS    0.0002    0.0001    0.0002    0.0001  ...   0.0002   0.0002   
-GUBRF.IS    0.0002    0.0002    0.0001    0.0001  ...   0.0003   0.0003   
-ISCTR.IS    0.0003    0.0001    0.0002    0.0001  ...   0.0003   0.0002   
-KCHOL.IS    0.0002    0.0002    0.0002    0.0002  ...   0.0003   0.0003   
-KOZAL.IS    0.0002    0.0002    0.0001   -0.0000  ...   0.0002   0.0002   
-KRDMD.IS    0.0002    0.0002    0.0003    0.0003  ...   0.0003   0.0003   
-MGROS.IS    0.0002    0.0001    0.0001    0.0001  ...   0.0002   0.0002   
-PETKM.IS    0.0002    0.0002    0.0001    0.0000  ...   0.0002   0.0002   
-PGSUS.IS    0.0001    0.0001    0.0001    0.0000  ...   0.0003   0.0002   
-SAHOL.IS    0.0001    0.0001    0.0001    0.0001  ...   0.0001   0.0002   
-SASA.IS     0.0002    0.0002    0.0001    0.0001  ...   0.0004   0.0003   
-SISE.IS     0.0001    0.0002    0.0001    0.0001  ...   0.0003   0.0003   
-TAVHL.IS    0.0001    0.0000    0.0001    0.0001  ...   0.0001   0.0000   
-TCELL.IS    0.0000    0.0002    0.0001    0.0001  ...   0.0001   0.0002   
-THYAO.IS    0.0001    0.0002    0.0001    0.0001  ...   0.0002   0.0002   
-TOASO.IS    0.0000    0.0002    0.0001    0.0002  ...   0.0002   0.0002   
-TTKOM.IS    0.0002    0.0001    0.0002    0.0002  ...   0.0002   0.0002   
-TUPRS.IS    0.0002    0.0002    0.0001    0.0001  ...   0.0003   0.0003   
-ULKER.IS    0.0002    0.0001    0.0001    0.0001  ...   0.0002   0.0002   
-YKBNK.IS    0.0002    0.0001    0.0001    0.0001  ...   0.0002   0.0002   
-
-          TAVHL.IS  TCELL.IS  THYAO.IS  TOASO.IS  TTKOM.IS  TUPRS.IS  \
-AEFES.IS    0.0001    0.0002    0.0002    0.0003    0.0002    0.0003   
-AKBNK.IS    0.0001    0.0001    0.0002    0.0002    0.0002    0.0002   
-ASELS.IS   -0.0001    0.0000    0.0000    0.0000    0.0000    0.0001   
-ASTOR.IS   -0.0000    0.0001    0.0002    0.0002    0.0002    0.0002   
-BIMAS.IS    0.0000    0.0001    0.0001    0.0001    0.0002    0.0002   
-CIMSA.IS    0.0001    0.0001    0.0001    0.0002    0.0002    0.0002   
-EKGYO.IS    0.0001    0.0000    0.0001    0.0000    0.0002    0.0002   
-ENKAI.IS    0.0000    0.0002    0.0002    0.0002    0.0001    0.0002   
-EREGL.IS    0.0001    0.0001    0.0001    0.0001    0.0002    0.0001   
-FROTO.IS    0.0001    0.0001    0.0001    0.0002    0.0002    0.0001   
-GARAN.IS    0.0002    0.0001    0.0001    0.0002    0.0003    0.0002   
-GUBRF.IS    0.0001    0.0001    0.0002    0.0002    0.0002    0.0002   
-ISCTR.IS    0.0001    0.0001    0.0002    0.0003    0.0002    0.0003   
-KCHOL.IS    0.0001    0.0002    0.0002    0.0003    0.0003    0.0004   
-KOZAL.IS    0.0000    0.0000    0.0002    0.0003    0.0001    0.0003   
-KRDMD.IS    0.0002    0.0002    0.0003    0.0002    0.0004    0.0004   
-MGROS.IS    0.0000    0.0001    0.0002    0.0001    0.0002    0.0003   
-PETKM.IS    0.0001    0.0001    0.0002    0.0002    0.0001    0.0003   
-PGSUS.IS    0.0001    0.0001    0.0002    0.0001    0.0001    0.0002   
-SAHOL.IS    0.0001    0.0002    0.0001    0.0002    0.0003    0.0002   
-SASA.IS     0.0001    0.0001    0.0002    0.0002    0.0002    0.0003   
-SISE.IS     0.0000    0.0002    0.0002    0.0002    0.0002    0.0003   
-TAVHL.IS    0.0002    0.0000    0.0001   -0.0000    0.0001    0.0001   
-TCELL.IS    0.0000    0.0002    0.0001    0.0002    0.0002    0.0002   
-THYAO.IS    0.0001    0.0001    0.0002    0.0001    0.0002    0.0003   
-TOASO.IS   -0.0000    0.0002    0.0001    0.0005    0.0002    0.0002   
-TTKOM.IS    0.0001    0.0002    0.0002    0.0002    0.0004    0.0002   
-TUPRS.IS    0.0001    0.0002    0.0003    0.0002    0.0002    0.0005   
-ULKER.IS    0.0001    0.0002    0.0002    0.0001    0.0002    0.0002   
-YKBNK.IS    0.0002    0.0001    0.0002    0.0002    0.0002    0.0002   
-
-          ULKER.IS  YKBNK.IS  
-AEFES.IS    0.0003    0.0003  
-AKBNK.IS    0.0003    0.0003  
-ASELS.IS   -0.0000   -0.0001  
-ASTOR.IS    0.0002    0.0002  
-BIMAS.IS    0.0002    0.0001  
-CIMSA.IS    0.0001    0.0002  
-EKGYO.IS    0.0002    0.0002  
-ENKAI.IS    0.0001    0.0001  
-EREGL.IS    0.0001    0.0001  
-FROTO.IS    0.0001    0.0001  
-GARAN.IS    0.0002    0.0004  
-GUBRF.IS    0.0002    0.0002  
-ISCTR.IS    0.0003    0.0004  
-KCHOL.IS    0.0003    0.0004  
-KOZAL.IS    0.0002    0.0002  
-KRDMD.IS    0.0003    0.0003  
-MGROS.IS    0.0002    0.0002  
-PETKM.IS    0.0002    0.0002  
-PGSUS.IS    0.0001    0.0001  
-SAHOL.IS    0.0003    0.0003  
-SASA.IS     0.0002    0.0002  
-SISE.IS     0.0002    0.0002  
-TAVHL.IS    0.0001    0.0002  
-TCELL.IS    0.0002    0.0001  
-THYAO.IS    0.0002    0.0002  
-TOASO.IS    0.0001    0.0002  
-TTKOM.IS    0.0002    0.0002  
-TUPRS.IS    0.0002    0.0002  
-ULKER.IS    0.0004    0.0002  
-YKBNK.IS    0.0002    0.0004  
-
-[30 rows x 30 columns]
+<pre>Covariance matrix shape: (30, 30)
 </pre>
 </div>
 </div>
@@ -8060,13 +7924,14 @@ YKBNK.IS    0.0002    0.0004
 <p>$(r + f^T (\mu - \large\mathbb{1} \normalsize r) - \large\frac{f^T \Sigma f}{2})$</p>
 <p>Because we are going to use the SciPy minimize function, it is effectively the same problem to minimize the negative of the above function. So, our final objective function will be:</p>
 <p>$g(f) = -(r + f^T (\mu - \large\mathbb{1} \normalsize r) - \large\frac{f^T \Sigma f}{2})$</p>
-<p>where the optimization problem is to maximize function $g(.)$ with respect to the variable $f$ with constraints</p>
+<p>where we have a quadratic optimization problem in $f$ to maximize function $g(.)$ with constraints</p>
 <ul>
 <li><p>$\sum\limits_{i=1}^{N} f_i \le 1$</p>
 </li>
 <li><p>$0 \le f_i \le 1$</p>
 </li>
 </ul>
+<p>We are going to use the SciPy minimize method and call the <strong>Sequential Least Squares Programming (SLSQP)</strong> algorithm for the numerical optimization procedure:</p>
 </div>
 </div>
 </div>
@@ -8075,7 +7940,7 @@ YKBNK.IS    0.0002    0.0004
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [118]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [150]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calc_optimum_allocations</span><span class="p">(</span><span class="n">mu_array_with_r</span><span class="p">,</span> <span class="n">cov_array</span><span class="p">):</span>
@@ -8087,9 +7952,9 @@ YKBNK.IS    0.0002    0.0004
     <span class="n">f_optimum_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
     <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">mu_array_with_r</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">mu_array_with_r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">date</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">]</span>                  <span class="c1"># mean risk-free return</span>
-        <span class="n">mu</span> <span class="o">=</span> <span class="n">mu_array_with_r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">date</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>         <span class="c1"># mean stock returns</span>
-        <span class="n">Sigma</span> <span class="o">=</span> <span class="n">cov_array</span><span class="p">[</span><span class="n">date</span><span class="p">]</span>                             <span class="c1"># covariance matrix</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">mu_array_with_r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">date</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">]</span>
+        <span class="n">mu</span> <span class="o">=</span> <span class="n">mu_array_with_r</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">date</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">Sigma</span> <span class="o">=</span> <span class="n">cov_array</span><span class="p">[</span><span class="n">date</span><span class="p">]</span>
 
         <span class="c1"># objective: negative of growth‐rate approx.</span>
         <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
@@ -8102,7 +7967,7 @@ YKBNK.IS    0.0002    0.0004
         <span class="n">bnds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">f_init</span><span class="p">)</span>
 
         <span class="c1"># optimize</span>
-        <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">f_init</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bnds</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">cons</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">f_init</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"SLSQP"</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bnds</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">cons</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">)</span>
         <span class="n">f_optimum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
         <span class="n">f_optimum_dict</span><span class="p">[</span><span class="n">date</span><span class="p">]</span> <span class="o">=</span> <span class="n">f_optimum</span>
@@ -8158,7 +8023,7 @@ f_optimum_df.shape: (31, 30)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [119]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Half Kelly optimum f dataframe</span>
@@ -8187,7 +8052,7 @@ f_optimum_df.shape: (31, 30)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [120]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Download and calculate returns for BIST30 index</span>
@@ -8214,7 +8079,7 @@ f_optimum_df.shape: (31, 30)
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[120]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[152]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8274,7 +8139,7 @@ f_optimum_df.shape: (31, 30)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [121]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># stock columns</span>
@@ -8388,15 +8253,20 @@ f_optimum_df.shape: (31, 30)
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Key Takeaways:</strong></p>
 <ul>
-<li>Half-Kelly posts the highest risk-adjusted return, outperforming full and double Kelly—and even the naïve equal-weighted benchmark by ~135 bps of Sharpe.</li>
-<li>Full-Kelly outperforms the benchmark too, but with the cost of higher drawdowns.</li>
-<li>Double-Kelly maximizes the returns but variance rises even faster, eroding its Sharpe edge.</li>
+<li>Half-Kelly tops the list in terms of risk-adjusted return, beating Full and Double Kelly, even the BIST30 benchmark by ~135 bps of Sharpe.</li>
+<li>Full-Kelly also outranks the benchmark but at the expense of higher drawdowns and sharp volatility spikes.</li>
+<li>Double-Kelly maximizes nominal returns but variance rises faster, wearing down its Sharpe ratio.</li>
+<li>Having a daily TLREF rate materially moderates allocations when risk-free yields surge, precluding over-leveraged bets in regimes of high rates.</li>
+<li>A monthly rebalancing cycle attains a reasonable balance: it reacts rapidly to changing regimes of returns without over-trading noise.</li>
 </ul>
-<p><strong>Implications for Practitioners:</strong></p>
+<p><strong>Practitioner Implications:</strong></p>
 <ul>
-<li>Fractional Kelly (e.g. 50 %) will normally dominate Full Kelly in live markets, reducing volatility at the cost of marginal daily return.</li>
-<li>Dynamic Rebalancing with a short‐horizon (1 month) estimate can detect regime change in both mean returns and covariance across BIST 30 stocks.</li>
-<li>Risk-Free Adaptation: A daily TLREF anchor avoids over­-aggressive punting during regimes of high rates.</li>
+<li>Fractional Kelly (for example, 50%) outperforms Full Kelly under real-world conditions, capping drawdowns and turnover at the expense of coming only marginally short of anticipated growth.</li>
+<li>Dynamic rebalancing with one-month lookback can detect regime shifts in the expected returns as well as in the covariances within the BIST 30 world.</li>
+<li>Anchoring to everyday TLREF creates hedges in a rate-sensitive risk budget, avoiding over-aggressive positioning when rates surge unexpectedly.</li>
+<li>Transaction-cost sensitivity: Monthly rebalancing keeps turnover—and thus trading costs—manageable in real-world use.</li>
+<li>Leverage constraints impose prudence; practitioners can tighten or relax this constraint to get the finest-grained portfolio aggression adjustment in terms of capital limitations.</li>
+<li>The design is model-independent and generalizes well to other fixed-income or emerging-markets universes, provided that you have a good short-term risk-free anchor.</li>
 </ul>
 </div>
 </div>
