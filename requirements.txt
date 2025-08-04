@@ -5,3 +5,4 @@ QuantLib
 scipy
 yfinance
 openpyxl
+nbconvert
