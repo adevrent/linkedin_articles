@@ -1,3 +1,4 @@
+torchinfo==1.8.0
 numpy
 pandas
 matplotlib
@@ -5,3 +6,5 @@ QuantLib
 scipy
 yfinance
 openpyxl
+--index-url https://download.pytorch.org/whl/cu128
+torch==2.7.0
