@@ -6,5 +6,6 @@ QuantLib
 scipy
 yfinance
 openpyxl
+nbconvert
 --index-url https://download.pytorch.org/whl/cu128
 torch==2.7.0
